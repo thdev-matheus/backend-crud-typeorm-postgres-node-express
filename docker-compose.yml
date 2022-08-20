@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  localhost:
+    container_name: localhost
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=1234
+      - POSTGRES_DB=users_database
+    ports:
+      - 5432:5432
+    volumes:
+      - localhost:/var/lib/postgresql/data:rw
+
+volumes:
+  localhost:
+    external: true
